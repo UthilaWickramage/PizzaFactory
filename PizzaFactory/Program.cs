@@ -10,6 +10,7 @@ internal class Program
     {
         bool isOrderDone = false;
         List<Pizza> pizzas = new List<Pizza>();
+        Console.WriteLine("-----Welcome to PIZZA FACTORY-----");
         while (!isOrderDone)
         {
             Pizza pizza;
@@ -89,10 +90,12 @@ internal class Program
         Console.WriteLine("------CHECKOUT------");
         ColorTools.ColorfulLine("Pizza total price = "+pizzaTotalPrice, ConsoleColor.Green);
         ColorTools.ColorfulLine("----Your Order----",ConsoleColor.Magenta);
+        Console.WriteLine();
         foreach (var item in order.Pizzas)
         {
             Console.WriteLine(item.getDescription());
         }
+        Console.WriteLine();
 
         ColorTools.ColorfulLine("Coupon Price = "+order.CouponValue,ConsoleColor.Green);
         ColorTools.ColorfulLine("Total Price = "+order.Total,ConsoleColor.White);
