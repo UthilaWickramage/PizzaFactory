@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaFactory.Models
+namespace PizzaFactory.Models.Pizzas
 {
     public abstract class Pizza
     {

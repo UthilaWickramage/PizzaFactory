@@ -1,5 +1,6 @@
 ﻿using PizzaFactory;
 using PizzaFactory.Models;
+using PizzaFactory.Models.Pizzas;
 
 internal class Program
 {

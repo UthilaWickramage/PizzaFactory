@@ -4,22 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaFactory.Models
+namespace PizzaFactory.Models.Pizzas.impl
 {
-    public class HamTopping : Topping
+    public class SmallPizza : Pizza
     {
-        public HamTopping(Pizza pizza):base(pizza)
-        {
-            
-        }
         public override string getDescription()
         {
-            return Pizza.getDescription() + " with Ham Topping";
+            return "Small Pizza";
         }
 
         public override double getPrice()
         {
-            return Pizza.getPrice() + 2;
+            return 10;
         }
     }
 }

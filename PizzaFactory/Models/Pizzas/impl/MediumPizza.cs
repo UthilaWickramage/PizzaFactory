@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaFactory.Models
+namespace PizzaFactory.Models.Pizzas.impl
 {
-    public class SmallPizza : Pizza
+    public class MediumPizza : Pizza
     {
         public override string getDescription()
         {
-            return "Small Pizza";
+            return "Medium Pizza";
         }
 
         public override double getPrice()
         {
-            return 10;
+            return 12;
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaFactory.Models
+namespace PizzaFactory.Models.Pizzas.impl
 {
     public class LargePizza : Pizza
     {
-    
+
         public override string getDescription()
         {
             return "Large Pizza";
