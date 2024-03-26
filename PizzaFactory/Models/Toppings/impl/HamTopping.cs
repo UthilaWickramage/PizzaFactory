@@ -13,14 +13,14 @@ namespace PizzaFactory.Models.Toppings.impl
         {
 
         }
-        public override string getDescription()
+        public override string GetDescription()
         {
-            return Pizza.getDescription() + " with Ham Topping";
+            return Pizza.GetDescription() + " with Ham Topping";
         }
 
-        public override double getPrice()
+        public override double GetPrice()
         {
-            return Pizza.getPrice() + 2;
+            return Pizza.GetPrice() + 2;
         }
     }
 }

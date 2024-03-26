@@ -8,14 +8,23 @@ namespace PizzaFactory.Models.Pizzas.impl
 {
     public class MediumPizza : Pizza
     {
-        public override string getDescription()
+        private string Description { get; set; }
+        private double Price { get; set; }
+        public MediumPizza()
         {
-            return "Medium Pizza";
+            Description = "Medium Pizza";
+            Price = 12;
         }
 
-        public override double getPrice()
+        public override double GetPrice()
         {
-            return 12;
+
+            return Price;
+        }
+
+        public override string GetDescription()
+        {
+            return Description;
         }
     }
 }

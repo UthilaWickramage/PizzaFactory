@@ -15,12 +15,12 @@ namespace PizzaFactory.Models
         public List<Pizza> Pizzas { get; set; }
 
         public void GetDescription() {
-            ColorTools.ColorfulLine("Pizza total price = " + Price, ConsoleColor.Green);
+            ColorTools.ColorfulLine("IPizza total price = " + Price, ConsoleColor.Green);
             ColorTools.ColorfulLine("----Your Order----", ConsoleColor.Magenta);
             Console.WriteLine();
             foreach (var item in Pizzas)
             {
-                Console.WriteLine(item.getDescription());
+                Console.WriteLine(item.GetDescription());
             }
             Console.WriteLine();
 
@@ -33,7 +33,7 @@ namespace PizzaFactory.Models
         {
             foreach (var item in Pizzas)
             {
-                Price += item.getPrice();
+                Price += item.GetPrice();
             }
         }
 
