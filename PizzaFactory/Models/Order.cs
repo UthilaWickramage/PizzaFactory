@@ -14,5 +14,28 @@ namespace PizzaFactory.Models
         public double Total { get; set; }
         public List<Pizza> Pizzas { get; set; }
 
+        public void GetDescription() {
+            ColorTools.ColorfulLine("Pizza total price = " + Price, ConsoleColor.Green);
+            ColorTools.ColorfulLine("----Your Order----", ConsoleColor.Magenta);
+            Console.WriteLine();
+            foreach (var item in Pizzas)
+            {
+                Console.WriteLine(item.getDescription());
+            }
+            Console.WriteLine();
+
+            ColorTools.ColorfulLine("Coupon Price = " + CouponValue, ConsoleColor.Green);
+            ColorTools.ColorfulLine("Total Price = " + Total, ConsoleColor.White);
+
+        }
+
+        public void CalculatePrice()
+        {
+            foreach (var item in Pizzas)
+            {
+                Price += item.getPrice();
+            }
+        }
+
     }
 }
