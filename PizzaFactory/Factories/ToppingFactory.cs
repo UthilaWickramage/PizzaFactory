@@ -1,12 +1,12 @@
-﻿using PizzaFactory.Models.Pizzas;
-using PizzaFactory.Models.Toppings.impl;
+﻿using Pizza_Factory.Models.Pizzas;
+using Pizza_Factory.Models.Toppings.impl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaFactory.Factories
+namespace Pizza_Factory.Factories
 {
     public static class ToppingFactory
     {

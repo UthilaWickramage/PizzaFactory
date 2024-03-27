@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PizzaFactory.Models.Pizzas;
+using Pizza_Factory.Models.Pizzas;
 
-namespace PizzaFactory.Models.Toppings.impl
+namespace Pizza_Factory.Models.Toppings.impl
 {
     public class PepperoniTopping : Topping
     {

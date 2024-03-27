@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PizzaFactory
+namespace Pizza_Factory
 {
     public static class ColorTools
     {

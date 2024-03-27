@@ -1,9 +1,9 @@
-﻿using PizzaFactory;
-using PizzaFactory.Factories;
-using PizzaFactory.Models;
-using PizzaFactory.Models.Pizzas;
-using PizzaFactory.Models.Pizzas.impl;
-using PizzaFactory.Models.Toppings.impl;
+﻿using Pizza_Factory;
+using Pizza_Factory.Factories;
+using Pizza_Factory.Models;
+using Pizza_Factory.Models.Pizzas;
+using Pizza_Factory.Models.Pizzas.impl;
+using Pizza_Factory.Models.Toppings.impl;
 using System.Data;
 
 public class Program
@@ -21,7 +21,7 @@ public class Program
             string result1 = Console.ReadLine();
             try
             {
-                pizza = PizzaFactory.Factories.PizzaFactory.createPizza(result1);
+                pizza = Pizza_Factory.Factories.PizzaFactory.createPizza(result1);
 
             }catch(NullReferenceException ex)
             {

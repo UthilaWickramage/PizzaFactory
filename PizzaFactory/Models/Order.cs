@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PizzaFactory.Models.Pizzas;
+using Pizza_Factory.Models.Pizzas;
 
-namespace PizzaFactory.Models
+namespace Pizza_Factory.Models
 {
     public class Order
     {
