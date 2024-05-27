@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PizzaFactory.Models.Pizzas;
+using Pizza_Factory.Models.Pizzas;
 
-namespace PizzaFactory.Models.Toppings.impl
+namespace Pizza_Factory.Models.Toppings.impl
 {
     public class PepperoniTopping : Topping
     {
@@ -13,14 +13,14 @@ namespace PizzaFactory.Models.Toppings.impl
         {
 
         }
-        public override string getDescription()
+        public override string GetDescription()
         {
-            return Pizza.getDescription() + " with Pepperoni Topping";
+            return Pizza.GetDescription() + " with Pepperoni Topping";
         }
 
-        public override double getPrice()
+        public override double GetPrice()
         {
-            return Pizza.getPrice() + 2;
+            return Pizza.GetPrice() + 2;
         }
     }
 }

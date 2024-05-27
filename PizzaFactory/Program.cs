@@ -1,10 +1,12 @@
-﻿using PizzaFactory;
-using PizzaFactory.Models;
-using PizzaFactory.Models.Pizzas;
-using PizzaFactory.Models.Pizzas.impl;
-using PizzaFactory.Models.Toppings.impl;
+﻿using Pizza_Factory;
+using Pizza_Factory.Factories;
+using Pizza_Factory.Models;
+using Pizza_Factory.Models.Pizzas;
+using Pizza_Factory.Models.Pizzas.impl;
+using Pizza_Factory.Models.Toppings.impl;
+using System.Data;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
@@ -14,47 +16,35 @@ internal class Program
         while (!isOrderDone)
         {
             Pizza pizza;
+
             ColorTools.ColorfulLine("What size of pizza do you want?",ConsoleColor.Cyan);
             string result1 = Console.ReadLine();
-            if(result1.Equals("Large"))
+            try
             {
-                pizza = new LargePizza();
-            }else if(result1.Equals("Medium"))
+                pizza = Pizza_Factory.Factories.PizzaFactory.createPizza(result1);
+
+            }catch(NullReferenceException ex)
             {
-                pizza = new MediumPizza();
-            }else if(result1.Equals("Small"))
-            {
-                pizza = new SmallPizza();
-            }
-            else
-            {
-                ColorTools.ColorfulLine("Invalid Input",ConsoleColor.Red);
+                ColorTools.ColorfulLine("Invalid Input", ConsoleColor.Red);
                 continue;
             }
-
+       
             while (true)
             {
                 ColorTools.ColorfulLine("What topping do you want?",ConsoleColor.Yellow);
 
                 string result2 = Console.ReadLine();
-                if (result2.Equals("Ham"))
+                try
                 {
-                    pizza = new HamTopping(pizza);
+                    pizza = ToppingFactory.addTopping(result2, pizza);
+
                 }
-                else if (result2.Equals("Pepperoni"))
-                {
-                    pizza = new PepperoniTopping(pizza);
-                }
-                else if (result2.Equals("Cheese"))
-                {
-                    pizza = new CheeseTopping(pizza);
-                }
-                else
+                catch (NullReferenceException ex)
                 {
                     ColorTools.ColorfulLine("Invalid Input", ConsoleColor.Red);
                     continue;
                 }
-
+             
 
                 ColorTools.ColorfulLine("Do you want more topping?",ConsoleColor.DarkYellow);
                 string result3 = Console.ReadLine();
@@ -77,29 +67,14 @@ internal class Program
         ColorTools.ColorfulLine("Add coupon price",ConsoleColor.Blue);
         double coupon = double.Parse(Console.ReadLine());
         
-        double pizzaTotalPrice = 0;
-        foreach (var item in pizzas)
-        {
-            pizzaTotalPrice+= item.getPrice();
-        }
+        
         Order order = new Order();
-        order.Price = pizzaTotalPrice;
         order.Pizzas = pizzas;
+        order.CalculatePrice();
         order.CouponValue = coupon;
         order.Total = order.Price - order.CouponValue;
         Console.WriteLine("------CHECKOUT------");
-        ColorTools.ColorfulLine("Pizza total price = "+pizzaTotalPrice, ConsoleColor.Green);
-        ColorTools.ColorfulLine("----Your Order----",ConsoleColor.Magenta);
-        Console.WriteLine();
-        foreach (var item in order.Pizzas)
-        {
-            Console.WriteLine(item.getDescription());
-        }
-        Console.WriteLine();
-
-        ColorTools.ColorfulLine("Coupon Price = "+order.CouponValue,ConsoleColor.Green);
-        ColorTools.ColorfulLine("Total Price = "+order.Total,ConsoleColor.White);
-
+         order.GetDescription();
 
     }
 }
